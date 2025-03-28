@@ -9,4 +9,19 @@ spring:
       server:
         git:
           uri: https://github.com/syncfit-msa/Config-Repo
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}
           default-label: main
+    bus:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
