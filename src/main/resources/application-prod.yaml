@@ -1,0 +1,32 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/syncfit-msa/Config-Repo
+          username: ${GIT_USERNAME:syncfit-msa}
+          password: ${GIT_TOKEN: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}
+          default-label: main
+          search-paths:
+            - user-service
+            - auth-service
+            - api-gateway
+    bus:
+      enabled: true
+
+  rabbitmq:
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: busrefresh,health,info
