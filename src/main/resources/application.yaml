@@ -12,16 +12,21 @@ spring:
           username: ${GIT_USERNAME}
           password: ${GIT_TOKEN}
           default-label: main
+          search-paths:
+            - user-service
+            - auth-service
+            - api-gateway
     bus:
       enabled: true
+
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${RABBITMQ_HOST:localhost}
+    port: ${RABBITMQ_PORT:5672}
+    username: ${RABBITMQ_USERNAME:guest}
+    password: ${RABBITMQ_PASSWORD:guest}
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: busrefresh,health,info
