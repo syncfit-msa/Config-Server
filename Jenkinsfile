@@ -63,8 +63,8 @@ pipeline {
 
         stage('Cleanup') {
             steps {
-                sh 'docker rmi mini2/api-gateway:latest || true'
-                sh 'docker rmi 268104899906.dkr.ecr.ap-northeast-3.amazonaws.com/mini2/api-gateway:latest || true'
+                sh 'docker rmi mini2/config-server:latest || true'
+                sh 'docker rmi 268104899906.dkr.ecr.ap-northeast-3.amazonaws.com/mini2/config-server:latest || true'
             }
         }
     }
