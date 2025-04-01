@@ -14,7 +14,11 @@ spring:
           default-label: main
           search-paths:
             - user-service
+            - track-service
+            - recommendation-service
+            - wishlist-service
             - auth-service
+            - youtube-service
             - api-gateway
     bus:
       enabled: true
