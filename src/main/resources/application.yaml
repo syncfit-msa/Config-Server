@@ -18,6 +18,7 @@ spring:
             - recommendation-service
             - wishlist-service
             - auth-service
+            - youtube-service
             - api-gateway
             - service-discovery
     bus:
