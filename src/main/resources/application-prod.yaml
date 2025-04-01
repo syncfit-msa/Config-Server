@@ -21,7 +21,6 @@ spring:
             - auth-service
             - api-gateway
             - service-discovery
-
     bus:
       enabled: true
 
